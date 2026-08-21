@@ -1,0 +1,15 @@
+{
+  "name": "Jom Baca KVK",
+  "short_name": "Jom Baca KVK",
+  "description": "Belajar membaca perkataan KVK sambil bermain.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff5f8",
+  "theme_color": "#7257d9",
+  "icons": [{
+    "src": "icon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml",
+    "purpose": "any maskable"
+  }]
+}
