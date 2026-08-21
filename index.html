@@ -7,7 +7,7 @@
   <!-- <title>Jom Baca KVK!</title> -->
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.png" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.png">
   <meta name="theme-color" content="#7257d9">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -57,9 +57,12 @@
         <button class="back" onclick="go('home')">⌂</button>
       </div>
       <div class="card">
+        <div id="storyLevelArea"></div>
+        <div id="storyContent" style="display:none">
         <div id="storyEmoji" class="illustration">🚌</div>
         <h2 id="storyTitle">Bas Ali</h2>
         <div id="storyText" class="story-text"></div>
+        <!-- <button class="primary" onclick="readStory()">🔊 Baca Semua</button> -->
         <!-- <div class="navrow"> -->
           <!-- <button class="primary" onclick="readStory()">🔊 Baca
             Semua</button> -->
@@ -70,6 +73,8 @@
           <span id="storyCount" class="pill">1/50</span>
           <button class="primary" onclick="changeStory(1)">➡</button>
         </div>
+        <button class="secondary" onclick="chooseStoryLevel()">← Tukar Tahap</button>
+        </div>
       </div>
     </section>
     <section id="quiz" class="screen">
@@ -78,10 +83,14 @@
         <button class="back" onclick="go('home')">⌂</button>
       </div>
       <div class="card quiz-card">
+        <div id="quizLevelArea"></div>
+        <div id="quizContent" style="display:none">
         <p class="prompt" id="quizPrompt">Apakah ini?</p>
         <div id="quizVisual" class="quiz-img">🚌</div>
         <div id="quizArea"></div>
         <div id="feedback" class="feedback"></div><button class="secondary" onclick="newQuiz()">Soalan baharu ↻</button>
+        <button class="secondary" onclick="chooseQuizLevel()">← Tukar Tahap</button>
+        </div>
       </div>
     </section>
     <!-- <section id="progress" class="screen">

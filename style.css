@@ -298,10 +298,17 @@ button {
   flex: none
 }
 
-.quiz-card {
+    .quiz-card {
   max-width: 720px;
   margin: auto
-}
+    }
+
+    .level-options { display: grid; gap: 14px; margin: 18px 0 }
+    .level-card { border-radius: 22px; padding: 22px 16px; background: #fffdfb; box-shadow: var(--shadow); font-size: 1.15rem; border: 3px solid #eee7fa; transition: .2s }
+    .level-card:nth-child(1) { background: #effbf7; border-color: #a9e4d4 }
+    .level-card:nth-child(2) { background: #fff9e8; border-color: #f5d77d }
+    .level-card:nth-child(3) { background: #fff1f6; border-color: #f4b2c6 }
+    .level-card:hover, .level-card:focus { transform: translateY(-3px); outline: none }
 
 .prompt {
   font-size: 1.4rem;
