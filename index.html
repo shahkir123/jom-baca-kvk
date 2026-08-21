@@ -51,8 +51,13 @@
       <div class="card">
         <div id="storyEmoji" class="illustration">🚌</div>
         <h2 id="storyTitle">Bas Ali</h2>
-        <div id="storyText" class="story-text"></div><button class="primary" onclick="readStory()">🔊 Baca
-          Semua</button>
+        <div id="storyText" class="story-text"></div>
+        <span id="storyCount" class="pill">1/50</span>
+        <!-- <div class="navrow"> -->
+          <!-- <button class="primary" onclick="readStory()">🔊 Baca
+            Semua</button> -->
+          
+        <!-- </div> -->
         <div class="navrow"><button class="secondary" onclick="changeStory(-1)">⬅ Cerita Sebelum</button><button
             class="primary" onclick="changeStory(1)">Cerita Seterusnya ➡</button></div>
       </div>
@@ -76,7 +81,7 @@
         <div class="progress-grid">
           <div class="stat"><strong id="learned">0/30</strong>Perkataan dipelajari</div>
           <div class="stat"><strong id="score">0</strong>Jawapan betul</div>
-          <div class="stat"><strong id="read">0/10</strong>Cerita dibaca</div>
+          <div class="stat"><strong id="read">0/50</strong>Cerita dibaca</div>
         </div>
         <div class="stars" id="stars">☆ ☆ ☆</div>
         <div class="bar"><i id="bar" style="width:0%"></i></div>
