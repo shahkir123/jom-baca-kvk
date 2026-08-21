@@ -1,13 +1,13 @@
 :root {
-      --ink: #26304a;
-      --purple: #6c4ee7;
-      --pink: #ff6f91;
-      --yellow: #ffd34e;
-      --mint: #52d6b0;
-      --sky: #58b6ef;
+      --ink: #30415f;
+      --purple: #7257d9;
+      --pink: #f2779b;
+      --yellow: #f4bf45;
+      --mint: #48bea5;
+      --sky: #4da8db;
       --cream: #fffaf0;
-      --card: #fff;
-      --shadow: 0 10px 25px #47378a20
+      --card: #fffdfb;
+      --shadow: 0 10px 25px #6d5aa522
     }
 
     * {
@@ -18,7 +18,7 @@
       margin: 0;
       font-family: Nunito, ui-rounded, system-ui, sans-serif;
       color: var(--ink);
-      background: linear-gradient(135deg, #f6f0ff, #eafbff);
+      background: linear-gradient(135deg, #fff5f8 0%, #f5f1ff 48%, #eafaff 100%);
       min-height: 100vh
     }
 
@@ -71,7 +71,7 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #7758ee, #a77df4);
+      background: linear-gradient(135deg, #8068df, #ae8be9 55%, #f39bb5);
       color: white;
       border-radius: 30px;
       padding: clamp(28px, 6vw, 60px);
@@ -111,7 +111,7 @@
     .pill {
       border-radius: 22px;
       padding: 22px 16px;
-      background: white;
+      background: #fffdfb;
       box-shadow: var(--shadow);
       font-size: clamp(1.05rem, 2.5vw, 1.35rem);
       transition: .2s
@@ -124,26 +124,30 @@
     }
 
     .menu button:nth-child(1) {
-      border-bottom: 7px solid var(--sky)
+      border-bottom: 7px solid #8dd5f2;
+      background: #f3fbff
     }
 
     .menu button:nth-child(2) {
-      border-bottom: 7px solid var(--pink)
+      border-bottom: 7px solid #f5a5bc;
+      background: #fff5f8
     }
 
     .menu button:nth-child(3) {
-      border-bottom: 7px solid var(--yellow)
+      border-bottom: 7px solid #f7d36d;
+      background: #fffaf0
     }
 
     .menu button:nth-child(4) {
-      border-bottom: 7px solid var(--mint)
+      border-bottom: 7px solid #83d9c4;
+      background: #f1fcf8
     }
 
     .parent-link {
       display: block;
       margin: 22px auto 0;
       background: transparent;
-      color: #685b91;
+      color: #66568d;
       text-decoration: underline
     }
 
@@ -160,13 +164,13 @@
     }
 
     .back {
-      background: #fff;
+      background: #fffdfb;
       border-radius: 14px;
       padding: 10px 14px
     }
 
     .card {
-      background: #fff;
+      background: #fffdfb;
       border-radius: 28px;
       padding: clamp(20px, 5vw, 38px);
       box-shadow: var(--shadow);
@@ -176,7 +180,7 @@
     .word {
       font-size: clamp(4rem, 15vw, 8rem);
       letter-spacing: 8px;
-      color: var(--purple);
+      color: #654dcc;
       margin: 4px
     }
 
@@ -200,20 +204,23 @@
     }
 
     .letter:nth-child(1) {
-      background: #d9efff
+      background: #dff4ff;
+      color: #286b91
     }
 
     .letter:nth-child(2) {
-      background: #fff0b4
+      background: #fff2bd;
+      color: #80600a
     }
 
     .letter:nth-child(3) {
-      background: #ffdce6
+      background: #ffe1ea;
+      color: #a44465
     }
 
     .legend {
       font-size: .9rem;
-      color: #68718c;
+      color: #596984;
       margin: 0
     }
 
@@ -232,12 +239,13 @@
     }
 
     .primary {
-      background: var(--purple);
+      background: #7257d9;
       color: #fff
     }
 
     .secondary {
-      background: #e8f9f5
+      background: #e2f8f2;
+      color: #28695e
     }
 
     .navrow {
@@ -265,12 +273,17 @@
       flex: 1
     }
 
+    .story-line .syllable-black { color: #202a3d }
+    .story-line .syllable-red { color: #d94f68 }
+    .story-line .punctuation { color: #202a3d }
+
     .story-line b {
-      color: var(--purple)
+      color: #654dcc
     }
 
     .mini {
-      background: #fff0b4;
+      background: #fff0b8;
+      color: #725512;
       border-radius: 50%;
       width: 38px;
       height: 38px;
@@ -299,8 +312,8 @@
 
     .choice {
       padding: 18px 8px;
-      background: #f0edff;
-      border: 3px solid #ddd5ff;
+      background: #f1eeff;
+      border: 3px solid #d7cdf8;
       border-radius: 18px;
       font-size: 1.2rem
     }
@@ -309,7 +322,7 @@
       min-height: 42px;
       font-size: 1.2rem;
       font-weight: 900;
-      color: #7a48db
+      color: #654dcc
     }
 
     .letters-pool {
@@ -320,7 +333,8 @@
     }
 
     .tile {
-      background: #ffd85c;
+      background: #ffe08a;
+      color: #6f5415;
       border-radius: 15px;
       padding: 16px 20px;
       font-size: 1.5rem
@@ -333,7 +347,7 @@
     }
 
     .stat {
-      background: #fff;
+      background: #fffdfb;
       border-radius: 20px;
       padding: 20px;
       text-align: center;
@@ -343,7 +357,7 @@
     .stat strong {
       display: block;
       font-size: 2rem;
-      color: var(--purple)
+      color: #654dcc
     }
 
     .stars {
@@ -354,14 +368,14 @@
     .bar {
       height: 18px;
       border-radius: 20px;
-      background: #e5e2f2;
+      background: #ece8f5;
       overflow: hidden
     }
 
     .bar i {
       display: block;
       height: 100%;
-      background: linear-gradient(90deg, var(--yellow), var(--pink));
+      background: linear-gradient(90deg, #f6ce5b, #f18eae, #a98be8);
       border-radius: 20px
     }
 
@@ -374,7 +388,7 @@
     }
 
     .wrong {
-      color: #d95571
+      color: #c95778
     }
 
     .toast {
@@ -382,7 +396,7 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: #26304a;
+      background: #405274;
       color: #fff;
       padding: 12px 20px;
       border-radius: 20px;
@@ -392,6 +406,15 @@
     .pop {
       animation: pop .4s
     }
+
+    /* Pastel section accents: learn = sky, stories = rose, quiz = sunny, progress = mint. */
+    #learn .heading h2 { color: #3e91be }
+    #stories .heading h2 { color: #d05d82 }
+    #quiz .heading h2 { color: #c58b16 }
+    #progress .heading h2, #parent .heading h2 { color: #319b86 }
+    .pill { color: #654dcc; background: #f3efff; padding: 10px 14px; font-size: 1rem }
+    .back, .icon-btn { border: 2px solid #eee7fa; color: #66568d }
+    button:focus-visible { outline: 4px solid #f6d66e; outline-offset: 2px }
 
     @keyframes pop {
       50% {

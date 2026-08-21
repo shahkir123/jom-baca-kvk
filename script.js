@@ -64,12 +64,22 @@ function changeWord(n) {
     wi = (wi + n + words.length) % words.length;
     renderWord()
 }
+const syllableMap = {
+    ali: ['A', 'li'], naik: ['na', 'ik'], duduk: ['du', 'duk'], dalam: ['da', 'lam'], pergi: ['per', 'gi'], pekan: ['pe', 'kan'], bas: ['bas'], itu: ['i', 'tu'], besar: ['be', 'sar'], dan: ['dan'], ibu: ['I', 'bu'], baru: ['ba', 'ru'], ini: ['i', 'ni'], rumah: ['ru', 'mah'], warna: ['war', 'na'], merah: ['me', 'rah'], ahmad: ['Ah', 'mad'], suka: ['su', 'ka'], cat: ['cat'], beg: ['beg'], ada: ['a', 'da'], atas: ['a', 'tas'], rak: ['rak'], pen: ['pen'], buku: ['bu', 'ku'], van: ['van'], laju: ['la', 'ju'], bersama: ['ber', 'sa', 'ma'], tin: ['tin'], susu: ['su', 'su'], meja: ['me', 'ja'], minum: ['mi', 'num'], biru: ['bi', 'ru'], tulis: ['tu', 'lis'], kad: ['kad'], tulisan: ['tu', 'li', 'san'], kemas: ['ke', 'mas'], bunga: ['bu', 'nga'], ros: ['ros'], pasu: ['pa', 'su'], limau: ['li', 'mau'], jus: ['jus'], manis: ['ma', 'nis'], seluar: ['se', 'lu', 'ar'], rosak: ['ro', 'sak'], tarik: ['ta', 'rik'], perlahan: ['per', 'la', 'han'], sudah: ['su', 'dah'], baik: ['ba', 'ik'], buku: ['bu', 'ku'], kucing: ['ku', 'cing'], kasut: ['ka', 'sut'], bola: ['bo', 'la'], topi: ['to', 'pi'], untuk: ['un', 'tuk'], pasu: ['pa', 'su'], pagi: ['pa', 'gi'], hari: ['ha', 'ri'], bangun: ['ba', 'ngun'], mandi: ['man', 'di'], biskut: ['bis', 'kut'], bulat: ['bu', 'lat'], ambil: ['am', 'bil'], sekolah: ['se', 'ko', 'lah'], berat: ['be', 'rat'], banyak: ['ba', 'nyak'], kerusi: ['ke', 'ru', 'si'], makan: ['ma', 'kan'], ikan: ['i', 'kan'], air: ['air'], luar: ['lu', 'ar'], ayah: ['A', 'yah'], bawa: ['ba', 'wa'], hilang: ['hi', 'lang'], bawah: ['ba', 'wah'], jumpa: ['jum', 'pa'], terbuka: ['ter', 'bu', 'ka'], tutup: ['tu', 'tup'], mainan: ['ma', 'in', 'an'], susun: ['su', 'sun'], lari: ['la', 'ri'], taman: ['ta', 'man'], rasa: ['ra', 'sa'], sihat: ['si', 'hat'], kapal: ['ka', 'pal'], kertas: ['ker', 'tas'], daripada: ['da', 'ri', 'pa', 'da'], terapung: ['te', 'ra', 'pung'], lukis: ['lu', 'kis'], gambar: ['gam', 'bar'], guna: ['gu', 'na'], kampung: ['kam', 'pung'], nenek: ['ne', 'nek'], hebat: ['he', 'bat'], roti: ['ro', 'ti'], sedap: ['se', 'dap'], bilik: ['bi', 'lik'], sisi: ['si', 'si'], katil: ['ka', 'til'], lambai: ['lam', 'bai'], dinding: ['din', 'ding'], tunjuk: ['tun', 'juk'], pukul: ['pu', 'kul'], pilih: ['pi', 'lih'], makan: ['ma', 'kan'], terapung: ['te', 'ra', 'pung'], panggil: ['pang', 'gil'], kenyang: ['ke', 'nyang'], lena: ['le', 'na'], senyum: ['se', 'nyum'], sekolah: ['se', 'ko', 'lah']
+};
+function colourSyllables(sentence) {
+    return sentence.split(/(\p{L}+|[^\p{L}]+)/u).filter(Boolean).map(part => {
+        if (!/^\p{L}+$/u.test(part)) return `<span class="punctuation">${part}</span>`;
+        const syllables = syllableMap[part.toLowerCase()] || [part];
+        return syllables.map((syllable, i) => `<span class="syllable ${i % 2 ? 'syllable-red' : 'syllable-black'}">${syllable}</span>`).join('');
+    }).join('');
+}
 function renderStory() {
     let x = stories[si];
     storyCount.textContent = (si + 1) + '/50';
     storyEmoji.textContent = x[1];
     storyTitle.textContent = x[0];
-    storyText.innerHTML = x[2].map((t, i) => `<div class="story-line"><span>${t.replace(/\b(bas|beg|cat|jam|jus|pen|rak|tin|van|zip)\b/gi, '<b>$1</b>')}</span><button class="mini" onclick="voice('${t.replaceAll("'", '')}')">🔊</button></div>`).join('')
+    storyText.innerHTML = x[2].map((t, i) => `<div class="story-line"><span>${colourSyllables(t)}</span><button class="mini" onclick="voice('${t.replaceAll("'", '')}')">🔊</button></div>`).join('')
 }
 function readStory() {
     stories[si][2].forEach((x, i) => setTimeout(() => voice(x), i * 1700));
