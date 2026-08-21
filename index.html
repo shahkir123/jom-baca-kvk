@@ -1,25 +1,106 @@
 <!doctype html>
 <html lang="ms">
+
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Jom Baca KVK!</title>
-  <style>
-    :root{--ink:#26304a;--purple:#6c4ee7;--pink:#ff6f91;--yellow:#ffd34e;--mint:#52d6b0;--sky:#58b6ef;--cream:#fffaf0;--card:#fff;--shadow:0 10px 25px #47378a20}*{box-sizing:border-box}body{margin:0;font-family:Nunito,ui-rounded,system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f6f0ff,#eafbff);min-height:100vh}button{font:inherit;border:0;cursor:pointer;color:var(--ink);font-weight:800}.app{max-width:1080px;margin:auto;padding:18px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.brand{font-size:clamp(1.2rem,3vw,1.7rem);font-weight:1000;color:var(--purple)}.brand span{color:var(--pink)}.icon-btn{background:#fff;border-radius:50%;width:48px;height:48px;box-shadow:var(--shadow);font-size:1.4rem}.screen{display:none}.screen.active{display:block}.hero{background:linear-gradient(135deg,#7758ee,#a77df4);color:white;border-radius:30px;padding:clamp(28px,6vw,60px);text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:'✦  ✿  ✦';position:absolute;font-size:3rem;opacity:.2;right:20px;bottom:12px}.hero h1{font-size:clamp(2.2rem,7vw,4.8rem);margin:0 0 10px}.hero p{font-size:clamp(1.1rem,3vw,1.5rem);margin:0}.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}.menu button,.pill{border-radius:22px;padding:22px 16px;background:white;box-shadow:var(--shadow);font-size:clamp(1.05rem,2.5vw,1.35rem);transition:.2s}.menu button:hover,.menu button:focus,.choice:hover{transform:translateY(-3px)}.menu button:nth-child(1){border-bottom:7px solid var(--sky)}.menu button:nth-child(2){border-bottom:7px solid var(--pink)}.menu button:nth-child(3){border-bottom:7px solid var(--yellow)}.menu button:nth-child(4){border-bottom:7px solid var(--mint)}.parent-link{display:block;margin:22px auto 0;background:transparent;color:#685b91;text-decoration:underline}.heading{display:flex;align-items:center;gap:12px;margin:12px 0 18px}.heading h2{margin:0;font-size:clamp(1.7rem,5vw,2.6rem)}.back{background:#fff;border-radius:14px;padding:10px 14px}.card{background:#fff;border-radius:28px;padding:clamp(20px,5vw,38px);box-shadow:var(--shadow);text-align:center}.word{font-size:clamp(4rem,15vw,8rem);letter-spacing:8px;color:var(--purple);margin:4px}.syllables{font-size:clamp(1.1rem,4vw,1.5rem);font-weight:900;margin:8px}.letters{display:flex;justify-content:center;gap:9px;margin:18px 0}.letter{padding:13px 17px;border-radius:16px;font-size:1.5rem}.letter:nth-child(1){background:#d9efff}.letter:nth-child(2){background:#fff0b4}.letter:nth-child(3){background:#ffdce6}.legend{font-size:.9rem;color:#68718c;margin:0}.illustration{font-size:6rem;min-height:116px;padding:5px}.primary,.secondary{padding:15px 22px;border-radius:18px;margin:6px;font-size:1.12rem}.primary{background:var(--purple);color:#fff}.secondary{background:#e8f9f5}.navrow{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.story-text{text-align:left;line-height:1.8;font-size:clamp(1.15rem,3vw,1.4rem);max-width:620px;margin:20px auto}.story-line{display:flex;align-items:center;gap:7px}.story-line span{flex:1}.story-line b{color:var(--purple)}.mini{background:#fff0b4;border-radius:50%;width:38px;height:38px;flex:none}.quiz-card{max-width:720px;margin:auto}.prompt{font-size:1.4rem;font-weight:900}.quiz-img{font-size:7rem}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{padding:18px 8px;background:#f0edff;border:3px solid #ddd5ff;border-radius:18px;font-size:1.2rem}.feedback{min-height:42px;font-size:1.2rem;font-weight:900;color:#7a48db}.letters-pool{display:flex;justify-content:center;gap:10px;min-height:75px}.tile{background:#ffd85c;border-radius:15px;padding:16px 20px;font-size:1.5rem}.progress-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#fff;border-radius:20px;padding:20px;text-align:center;box-shadow:var(--shadow)}.stat strong{display:block;font-size:2rem;color:var(--purple)}.stars{font-size:2.4rem;margin:16px}.bar{height:18px;border-radius:20px;background:#e5e2f2;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--yellow),var(--pink));border-radius:20px}.teacher{text-align:left}.teacher li{margin:8px}.wrong{color:#d95571}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#26304a;color:#fff;padding:12px 20px;border-radius:20px;display:none}.pop{animation:pop .4s}@keyframes pop{50%{transform:scale(1.07)}}@media(max-width:560px){.menu{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.progress-grid{grid-template-columns:1fr 1fr}.progress-grid .stat:last-child{grid-column:span 2}.navrow button{font-size:.9rem;padding:12px 10px}}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body><main class="app"><div class="topbar"><div class="brand">Jom <span>Baca</span> KVK! 🔤</div><button class="icon-btn" onclick="go('home')">⌂</button></div>
-<section id="home" class="screen active"><div class="hero"><h1>Jom Baca KVK! 🔤</h1><p>Belajar membaca sambil bermain</p></div><div class="menu"><button onclick="go('learn')">🔊<br>Belajar KVK</button><button onclick="go('stories')">📖<br>Cerita KVK</button><button onclick="go('quiz')">🎮<br>Kuiz KVK</button><button onclick="go('progress')">⭐<br>Pencapaian Saya</button></div><button class="parent-link" onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button></section>
-<section id="learn" class="screen"><div class="heading"><button class="back" onclick="go('home')">←</button><h2>Belajar KVK</h2></div><div class="card"><div id="learnImg" class="illustration">🚌</div><div id="word" class="word">BAS</div><div id="formula" class="syllables">B + A + S = BAS</div><div class="letters"><div class="letter"><b id="c1">B</b><br><small>Konsonan</small></div><div class="letter"><b id="v">A</b><br><small>Vokal</small></div><div class="letter"><b id="c2">S</b><br><small>Konsonan</small></div></div><p class="legend">Huruf → bunyi → perkataan</p><div><button class="primary" onclick="speakWord()">🔊 Dengar</button><button class="secondary" onclick="speakSlowly()">🐢 Sebut Perlahan</button><button class="secondary" onclick="speakWord()">🔊 Ulang</button></div><div class="navrow"><button class="secondary" onclick="changeWord(-1)">⬅ Sebelum</button><span id="count" class="pill">1 / 30</span><button class="primary" onclick="changeWord(1)">Seterusnya ➡</button></div></div></section>
-<section id="stories" class="screen"><div class="heading"><button class="back" onclick="go('home')">←</button><h2>Cerita KVK</h2></div><div class="card"><div id="storyEmoji" class="illustration">🚌</div><h2 id="storyTitle">Bas Ali</h2><div id="storyText" class="story-text"></div><button class="primary" onclick="readStory()">🔊 Baca Semua</button><div class="navrow"><button class="secondary" onclick="changeStory(-1)">⬅ Cerita Sebelum</button><button class="primary" onclick="changeStory(1)">Cerita Seterusnya ➡</button></div></div></section>
-<section id="quiz" class="screen"><div class="heading"><button class="back" onclick="go('home')">←</button><h2>Kuiz KVK 🎮</h2></div><div class="card quiz-card"><p class="prompt" id="quizPrompt">Apakah ini?</p><div id="quizVisual" class="quiz-img">🚌</div><div id="quizArea"></div><div id="feedback" class="feedback"></div><button class="secondary" onclick="newQuiz()">Soalan baharu ↻</button></div></section>
-<section id="progress" class="screen"><div class="heading"><button class="back" onclick="go('home')">←</button><h2>Pencapaian Saya ⭐</h2></div><div class="card"><div class="progress-grid"><div class="stat"><strong id="learned">0/30</strong>Perkataan dipelajari</div><div class="stat"><strong id="score">0</strong>Jawapan betul</div><div class="stat"><strong id="read">0/10</strong>Cerita dibaca</div></div><div class="stars" id="stars">☆ ☆ ☆</div><div class="bar"><i id="bar" style="width:0%"></i></div><p id="percent">0% kemajuan</p></div></section>
-<section id="parent" class="screen"><div class="heading"><button class="back" onclick="go('home')">←</button><h2>Ibu Bapa / Guru</h2></div><div class="card teacher"><h3>Ringkasan pembelajaran</h3><p id="parentSummary"></p><ul><li>Perkataan selesai: <b id="pWords"></b></li><li>Skor kuiz: <b id="pScore"></b></li><li>Cerita selesai: <b id="pStories"></b></li><li>Perkataan perlu latihan: <span id="pWrong" class="wrong"></span></li></ul><button class="secondary" onclick="resetProgress()">Reset Progress</button></div></section></main><div id="toast" class="toast"></div>
-<script>
-const words=[['bas','🚌'],['beg','🎒'],['cat','🐱'],['jam','⏰'],['jus','🧃'],['pen','🖊️'],['rak','🗄️'],['tin','🥫'],['van','🚐'],['zip','🤐'],['bom','💣'],['bus','🚌'],['cam','📷'],['gam','🖼️'],['gas','⛽'],['lap','💻'],['lim','🍋'],['lot','🎟️'],['mal','🏬'],['pam','⛲'],['pin','📌'],['pod','🎙️'],['ros','🌹'],['sip','🥤'],['tali','🪢'],['top','🔝'],['wan','👴'],['yap','🧑'],['zon','🗺️'],['kad','💳']];
-const stories=[['Bas Ali','🚌',['Ali naik bas.','Bas itu besar.','Ali duduk di dalam bas.','Ali dan ibu pergi ke pekan.']],['Jam Baharu','⏰',['Ini jam baharu.','Jam itu ada di rak.','Jam berbunyi tik tok.']],['Kucing Comel','🐱',['Cat rumah.','Cat rumah warna merah.','Ahmad suka cat merah.']],['Beg Merah','🎒',['Ini beg merah.','Beg ada di atas rak.','Pen dan buku ada dalam beg.']],['Van Ibu','🚐',['Ibu ada van.','Van itu laju.','Ali naik van bersama ibu.']],['Tin Susu','🥫',['Ini tin susu.','Tin ada di atas meja.','Ali minum susu.']],['Pen Biru','🖊️',['Pen Ali warna biru.','Ali tulis di atas kad.','Tulisan Ali kemas.']],['Bunga Ros','🌹',['Ini ros merah.','Ros ada di dalam pasu.','Ibu suka bunga ros.']],['Jus Limau','🧃',['Ali buat jus limau.','Jus itu manis.','Ali minum jus dengan ibu.']],['Zip Seluar','🤐',['Zip seluar Ali rosak.','Ibu tarik zip perlahan.','Zip sudah baik!']]];
-let s=JSON.parse(localStorage.kvk||'null')||{learned:[],score:0,stories:[],wrong:{}};let wi=0,si=0;
-function go(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='learn')renderWord();if(id==='stories')renderStory();if(id==='quiz')newQuiz();if(id==='progress'||id==='parent')renderProgress()}
-function save(){localStorage.kvk=JSON.stringify(s)}function voice(text,rate=0.85){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang='ms-MY';u.rate=rate;let vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase().startsWith('ms'))||vs.find(v=>v.lang.toLowerCase().startsWith('id'))||null;speechSynthesis.speak(u)}
-function speakWord(){let w=words[wi][0];voice(w);s.learned.includes(w)||s.learned.push(w);save()}function speakSlowly(){let w=words[wi][0].toUpperCase();voice(w.split('').join('... ')+'... '+w,0.55);s.learned.includes(w.toLowerCase())||s.learned.push(w.toLowerCase());save()}function renderWord(){let [w,e]=words[wi];w=w.toUpperCase();word.textContent=w;learnImg.textContent=e;formula.textContent=w.split('').join(' + ')+' = '+w;c1.textContent=w[0];v.textContent=w[1];c2.textContent=w[2];count.textContent=(wi+1)+' / 30'}function changeWord(n){wi=(wi+n+words.length)%words.length;renderWord()}function renderStory(){let x=stories[si];storyEmoji.textContent=x[1];storyTitle.textContent=x[0];storyText.innerHTML=x[2].map((t,i)=>`<div class="story-line"><span>${t.replace(/\b(bas|beg|cat|jam|jus|pen|rak|tin|van|zip)\b/gi,'<b>$1</b>')}</span><button class="mini" onclick="voice('${t.replaceAll("'",'')}')">🔊</button></div>`).join('')}function readStory(){stories[si][2].forEach((x,i)=>setTimeout(()=>voice(x),i*1700));if(!s.stories.includes(si))s.stories.push(si);save()}function changeStory(n){si=(si+n+10)%10;renderStory()}
-function newQuiz(){let type=Math.floor(Math.random()*3),w=words[Math.floor(Math.random()*10)][0];feedback.textContent='';quizVisual.textContent=words.find(x=>x[0]===w)[1];if(type===0){quizPrompt.textContent='Apakah ini?';let opts=[w,...words.filter(x=>x[0]!==w).sort(()=>Math.random()-.5).slice(0,2).map(x=>x[0])].sort(()=>Math.random()-.5);quizArea.innerHTML='<div class="choices">'+opts.map(x=>`<button class="choice" onclick="answer('${x}','${w}')">${x.toUpperCase()}</button>`).join('')+'</div>'}else if(type===1){quizPrompt.textContent='Susun huruf menjadi perkataan yang betul.';quizVisual.textContent='🔤';quizArea.innerHTML='<div class="letters-pool">'+w.split('').sort(()=>Math.random()-.5).map((x,i)=>`<button class="tile" onclick="pickTile(this,'${x}','${w}')">${x.toUpperCase()}</button>`).join('')+'</div><p id="built"></p>'}else{quizPrompt.textContent='Dengar dan pilih perkataan.';quizVisual.textContent='🔊';quizArea.innerHTML='<button class="primary" onclick="voice(\''+w+'\')">🔊 Dengar</button><div class="choices">'+[w,...words.filter(x=>x[0]!==w).sort(()=>Math.random()-.5).slice(0,2).map(x=>x[0])].sort(()=>Math.random()-.5).map(x=>`<button class="choice" onclick="answer('${x}','${w}')">${x.toUpperCase()}</button>`).join('')+'</div>'}}function answer(a,w){if(a===w){s.score++;feedback.textContent='🎉 Betul! Hebat!';feedback.className='feedback pop';voice(w);save()}else{feedback.textContent='Cuba lagi 😊';s.wrong[a]=(s.wrong[a]||0)+1;save()}}function pickTile(b,x,w){b.disabled=true;built.textContent=(built.textContent||'')+x.toUpperCase();if(built.textContent.toLowerCase()===w){feedback.textContent='🎉 '+w.toUpperCase()+'!';voice(w);s.score++;save()}}function renderProgress(){let n=s.learned.length,p=Math.round((n/30)*100);learned.textContent=n+'/30';score.textContent=s.score;read.textContent=s.stories.length+'/10';bar.style.width=p+'%';percent.textContent=p+'% kemajuan';stars.textContent=n>=20?'⭐ ⭐ ⭐':n>=10?'⭐ ⭐ ☆':n>=5?'⭐ ☆ ☆':'☆ ☆ ☆';pWords.textContent=n+'/30';pScore.textContent=s.score;pStories.textContent=s.stories.length+'/10';pWrong.textContent=Object.keys(s.wrong).length?Object.entries(s.wrong).sort((a,b)=>b[1]-a[1]).map(x=>x[0].toUpperCase()).join(', '):'Tiada lagi';parentSummary.textContent='Kemajuan keseluruhan: '+p+'%'}function resetProgress(){if(confirm('Padam semua kemajuan?')){s={learned:[],score:0,stories:[],wrong:{}};save();renderProgress();toast.textContent='Kemajuan telah direset.';toast.style.display='block';setTimeout(()=>toast.style.display='none',1800)}}speechSynthesis.onvoiceschanged=()=>{};
-</script></body></html>
+
+<body>
+  <main class="app">
+    <div class="topbar">
+      <div class="brand">Jom <span>Baca</span> KVK! 🔤</div><button class="icon-btn" onclick="go('home')">⌂</button>
+    </div>
+    <section id="home" class="screen active">
+      <div class="hero">
+        <h1>Jom Baca KVK! 🔤</h1>
+        <p>Belajar membaca sambil bermain</p>
+      </div>
+      <div class="menu"><button onclick="go('learn')">🔊<br>Belajar KVK</button><button
+          onclick="go('stories')">📖<br>Cerita KVK</button><button onclick="go('quiz')">🎮<br>Kuiz KVK</button><button
+          onclick="go('progress')">⭐<br>Pencapaian Saya</button></div><button class="parent-link"
+        onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button>
+    </section>
+    <section id="learn" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">←</button>
+        <h2>Belajar KVK</h2>
+      </div>
+      <div class="card">
+        <div id="learnImg" class="illustration">🚌</div>
+        <div id="word" class="word">BAS</div>
+        <!-- <div id="formula" class="syllables">B + A + S = BAS</div> -->
+        <div class="letters">
+          <div class="letter"><b id="c1">B</b><br><small>Konsonan</small></div>
+          <div class="letter"><b id="v">A</b><br><small>Vokal</small></div>
+          <div class="letter"><b id="c2">S</b><br><small>Konsonan</small></div>
+        </div>
+        <p class="legend">Huruf → bunyi → perkataan</p>
+        <div><button class="primary" onclick="speakWord()">🔊 Dengar</button><button class="secondary"
+            onclick="speakSlowly()">🐢 Sebut Perlahan</button><button class="secondary" onclick="speakWord()">🔊
+            Ulang</button></div>
+        <div class="navrow"><button class="secondary" onclick="changeWord(-1)">⬅ Sebelum</button><span id="count"
+            class="pill">1 / 30</span><button class="primary" onclick="changeWord(1)">Seterusnya ➡</button></div>
+      </div>
+    </section>
+    <section id="stories" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">←</button>
+        <h2>Cerita KVK</h2>
+      </div>
+      <div class="card">
+        <div id="storyEmoji" class="illustration">🚌</div>
+        <h2 id="storyTitle">Bas Ali</h2>
+        <div id="storyText" class="story-text"></div><button class="primary" onclick="readStory()">🔊 Baca
+          Semua</button>
+        <div class="navrow"><button class="secondary" onclick="changeStory(-1)">⬅ Cerita Sebelum</button><button
+            class="primary" onclick="changeStory(1)">Cerita Seterusnya ➡</button></div>
+      </div>
+    </section>
+    <section id="quiz" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">←</button>
+        <h2>Kuiz KVK 🎮</h2>
+      </div>
+      <div class="card quiz-card">
+        <p class="prompt" id="quizPrompt">Apakah ini?</p>
+        <div id="quizVisual" class="quiz-img">🚌</div>
+        <div id="quizArea"></div>
+        <div id="feedback" class="feedback"></div><button class="secondary" onclick="newQuiz()">Soalan baharu ↻</button>
+      </div>
+    </section>
+    <section id="progress" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">←</button>
+        <h2>Pencapaian Saya ⭐</h2>
+      </div>
+      <div class="card">
+        <div class="progress-grid">
+          <div class="stat"><strong id="learned">0/30</strong>Perkataan dipelajari</div>
+          <div class="stat"><strong id="score">0</strong>Jawapan betul</div>
+          <div class="stat"><strong id="read">0/10</strong>Cerita dibaca</div>
+        </div>
+        <div class="stars" id="stars">☆ ☆ ☆</div>
+        <div class="bar"><i id="bar" style="width:0%"></i></div>
+        <p id="percent">0% kemajuan</p>
+      </div>
+    </section>
+    <section id="parent" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">←</button>
+        <h2>Ibu Bapa / Guru</h2>
+      </div>
+      <div class="card teacher">
+        <h3>Ringkasan pembelajaran</h3>
+        <p id="parentSummary"></p>
+        <ul>
+          <li>Perkataan selesai: <b id="pWords"></b></li>
+          <li>Skor kuiz: <b id="pScore"></b></li>
+          <li>Cerita selesai: <b id="pStories"></b></li>
+          <li>Perkataan perlu latihan: <span id="pWrong" class="wrong"></span></li>
+        </ul><button class="secondary" onclick="resetProgress()">Reset Progress</button>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
