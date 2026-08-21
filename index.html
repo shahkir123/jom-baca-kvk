@@ -4,33 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Jom Baca KVK!</title>
+  <!-- <title>Jom Baca KVK!</title> -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main class="app">
     <div class="topbar">
-      <div class="brand">Jom <span>Baca</span> KVK! 🔤</div><button class="icon-btn" onclick="go('home')">⌂</button>
+      <!-- <div class="brand">Jom <span>Baca</span> KVK! 🔤</div> -->
+      <!-- <button class="icon-btn" onclick="go('home')">⌂</button> -->
     </div>
     <section id="home" class="screen active">
       <div class="hero">
         <h1>Jom Baca KVK! 🔤</h1>
         <p>Belajar membaca sambil bermain</p>
       </div>
-      <div class="menu"><button onclick="go('learn')">🔊<br>Belajar KVK</button><button
-          onclick="go('stories')">📖<br>Cerita KVK</button><button onclick="go('quiz')">🎮<br>Kuiz KVK</button><button
-          onclick="go('progress')">⭐<br>Pencapaian Saya</button></div><button class="parent-link"
-        onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button>
+      <div class="menu">
+        <!-- <button onclick="go('learn')">🔊<br>Belajar KVK</button> -->
+        <button onclick="go('stories')">📖<br>Cerita KVK</button>
+        <button onclick="go('quiz')">🎮<br>Kuiz KVK</button>
+        <!-- <button  onclick="go('progress')">⭐<br>Pencapaian Saya</button> </div> -->
+        <!-- <button class="parent-link" onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button> -->
     </section>
-    <section id="learn" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">←</button>
+    <!-- <section id="learn" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
         <h2>Belajar KVK</h2>
       </div>
       <div class="card">
         <div id="learnImg" class="illustration">🚌</div>
         <div id="word" class="word">BAS</div>
-        <!-- <div id="formula" class="syllables">B + A + S = BAS</div> -->
+        <div id="formula" class="syllables">B + A + S = BAS</div>
         <div class="letters">
           <div class="letter"><b id="c1">B</b><br><small>Konsonan</small></div>
           <div class="letter"><b id="v">A</b><br><small>Vokal</small></div>
@@ -43,28 +46,32 @@
         <div class="navrow"><button class="secondary" onclick="changeWord(-1)">⬅ Sebelum</button><span id="count"
             class="pill">1 / 30</span><button class="primary" onclick="changeWord(1)">Seterusnya ➡</button></div>
       </div>
-    </section>
+    </section> -->
     <section id="stories" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">←</button>
+      <div class="heading button-container">
         <h2>Cerita KVK</h2>
+        <button class="back" onclick="go('home')">⌂</button>
       </div>
       <div class="card">
         <div id="storyEmoji" class="illustration">🚌</div>
         <h2 id="storyTitle">Bas Ali</h2>
         <div id="storyText" class="story-text"></div>
-        <span id="storyCount" class="pill">1/50</span>
         <!-- <div class="navrow"> -->
           <!-- <button class="primary" onclick="readStory()">🔊 Baca
             Semua</button> -->
           
         <!-- </div> -->
-        <div class="navrow"><button class="secondary" onclick="changeStory(-1)">⬅ Cerita Sebelum</button><button
-            class="primary" onclick="changeStory(1)">Cerita Seterusnya ➡</button></div>
+        <div class="navrow">
+          <button class="secondary" onclick="changeStory(-1)">⬅</button>
+          <span id="storyCount" class="pill">1/50</span>
+          <button class="primary" onclick="changeStory(1)">➡</button>
+        </div>
       </div>
     </section>
     <section id="quiz" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">←</button>
+      <div class="heading button-container">
         <h2>Kuiz KVK 🎮</h2>
+        <button class="back" onclick="go('home')">⌂</button>
       </div>
       <div class="card quiz-card">
         <p class="prompt" id="quizPrompt">Apakah ini?</p>
@@ -73,8 +80,8 @@
         <div id="feedback" class="feedback"></div><button class="secondary" onclick="newQuiz()">Soalan baharu ↻</button>
       </div>
     </section>
-    <section id="progress" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">←</button>
+    <!-- <section id="progress" class="screen">
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
         <h2>Pencapaian Saya ⭐</h2>
       </div>
       <div class="card">
@@ -87,9 +94,9 @@
         <div class="bar"><i id="bar" style="width:0%"></i></div>
         <p id="percent">0% kemajuan</p>
       </div>
-    </section>
+    </section> -->
     <section id="parent" class="screen">
-      <div class="heading"><button class="back" onclick="go('home')">←</button>
+      <div class="heading"><button class="back" onclick="go('home')">⌂</button>
         <h2>Ibu Bapa / Guru</h2>
       </div>
       <div class="card teacher">
