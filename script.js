@@ -161,7 +161,7 @@ function go(id) {
 function save() {
     storage.set('kvk', JSON.stringify(s))
 }
-function voice(text, rate = 0.85) {
+function voice(text, rate = 0.3) {
     speechSynthesis.cancel();
     let u = new SpeechSynthesisUtterance(text);
     u.lang = 'ms-MY';
@@ -178,7 +178,7 @@ function speakWord() {
 }
 function speakSlowly() {
     let w = words[wi][0].toUpperCase();
-    voice(w.split('').join('... ') + '... ' + w, 0.55);
+    voice(w.split('').join('... ') + '... ' + w, 0.05);
     s.learned.includes(w.toLowerCase()) || s.learned.push(w.toLowerCase());
     save()
 }
