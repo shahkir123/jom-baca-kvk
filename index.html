@@ -18,15 +18,15 @@
       <!-- <div class="brand">Jom <span>Baca</span> KVK! 🔤</div> -->
       <!-- <button class="icon-btn" onclick="go('home')">⌂</button> -->
     </div>
-    <section id="home" class="screen active">
+    <section id="home" class="screen">
       <div class="hero">
-        <h1>Jom Baca KVK! 🔤</h1>
-        <p>Belajar membaca sambil bermain</p>
+        <h1>Jom Baca Buku Cerita! 🔤</h1>
+        <p>Belajar membaca sambil dengar</p>
       </div>
       <div class="menu">
         <!-- <button onclick="go('learn')">🔊<br>Belajar KVK</button> -->
-        <button onclick="go('stories')">📖<br>Cerita KVK</button>
-        <button onclick="go('quiz')">🎮<br>Kuiz KVK</button>
+        <button onclick="go('stories')">📖<br>Cerita Kanak-Kanak</button>
+        <!-- <button onclick="go('quiz')">🎮<br>Kuiz KVK</button> -->
         <!-- <button  onclick="go('progress')">⭐<br>Pencapaian Saya</button> </div> -->
         <!-- <button class="parent-link" onclick="go('parent')">👩‍🏫 Ibu Bapa / Guru</button> -->
     </section>
@@ -51,9 +51,9 @@
             class="pill">1 / 30</span><button class="primary" onclick="changeWord(1)">Seterusnya ➡</button></div>
       </div>
     </section> -->
-    <section id="stories" class="screen">
+    <section id="stories" class="screen active">
       <div class="heading button-container">
-        <h2>Cerita KVK</h2>
+        <h2>Cerita Kanak-Kanak</h2>
         <button class="back" onclick="go('home')">⌂</button>
       </div>
       <div class="card">
@@ -73,11 +73,11 @@
           <span id="storyCount" class="pill">1/50</span>
           <button class="primary" onclick="changeStory(1)">➡</button>
         </div>
-        <button class="secondary" onclick="chooseStoryLevel()">← Tukar Tahap</button>
+        <button class="secondary story-level-button" onclick="chooseStoryLevel()">Tukar Tahap</button>
         </div>
       </div>
     </section>
-    <section id="quiz" class="screen">
+    <!-- <section id="quiz" class="screen">
       <div class="heading button-container">
         <h2>Kuiz KVK 🎮</h2>
         <button class="back" onclick="go('home')">⌂</button>
@@ -92,7 +92,7 @@
         <button class="secondary" onclick="chooseQuizLevel()">← Tukar Tahap</button>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- <section id="progress" class="screen">
       <div class="heading"><button class="back" onclick="go('home')">⌂</button>
         <h2>Pencapaian Saya ⭐</h2>
