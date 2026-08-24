@@ -314,7 +314,7 @@ button {
 #storyContent > .story-level-button {
   position: fixed;
   left: 50%;
-  bottom: 92px;
+  bottom: 108px;
   z-index: 20;
   transform: translateX(-50%);
   margin: 0;
@@ -325,6 +325,8 @@ button {
   background: #e4faf4;
   color: #28786c;
   box-shadow: 0 6px 16px #6d5aa52b;
+  outline: none;
+  appearance: none;
   white-space: nowrap;
 }
 
@@ -350,11 +352,33 @@ button {
   margin: auto
     }
 
-    .level-options { display: grid; gap: 14px; margin: 18px 0 }
-    .level-card { border-radius: 22px; padding: 22px 16px; background: #fffdfb; box-shadow: var(--shadow); font-size: 1.35rem; border: 3px solid #eee7fa; transition: .2s }
-    .level-card:nth-child(1) { background: #effbf7; border-color: #a9e4d4 }
-    .level-card:nth-child(2) { background: #fff9e8; border-color: #f5d77d }
-    .level-card:nth-child(3) { background: #fff1f6; border-color: #f4b2c6 }
+.level-options { display: grid; gap: 14px; margin: 18px 0 }
+    #stories > .card { background: linear-gradient(145deg, #fffdfb, #fff8fc 55%, #f0fbff); border: 3px solid #ffffff; }
+    #stories .heading h2 { color: #d25582; text-shadow: 2px 2px 0 #ffdce8; }
+    #storyLevelArea h3 { color: #3e5275; font-size: clamp(1.5rem, 4vw, 2rem); margin: 8px 0 20px; }
+    .storybook-animals { display: flex; justify-content: center; align-items: end; gap: clamp(10px, 4vw, 24px); font-size: clamp(2.2rem, 9vw, 4rem); margin: 2px 0 8px; }
+    .storybook-animals span { display: inline-block; filter: drop-shadow(0 5px 3px #6d5aa522); animation: animal-bounce 2.4s ease-in-out infinite; }
+    .storybook-animals span:nth-child(2) { animation-delay: .25s; }
+    .storybook-animals span:nth-child(3) { animation-delay: .5s; }
+    .storybook-animals span:nth-child(4) { animation-delay: .75s; }
+    .storybook-subtitle { color: #6d7893; font-size: 1.05rem; margin: -10px 0 18px; }
+    .short-story-cover { font-size: 3.8rem; margin: 4px 0; }
+    .short-story-text { text-align: left; max-width: 680px; margin: 18px auto; font-size: clamp(1.25rem, 3.2vw, 1.55rem); line-height: 1.7; }
+    .short-story-text p { margin: 8px 0; }
+    .short-story-emoji { font-size: 5rem; min-height: 86px; }
+    .short-story-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 18px; }
+    .short-story-nav button { padding: 12px 14px; }
+    .short-story-nav button:disabled { opacity: .45; cursor: not-allowed; }
+    .lesson-box { margin: 18px auto; padding: 16px; border-radius: 18px; background: #fff4bf; color: #765b16; text-align: left; line-height: 1.55; }
+    #shortStoryContent > .short-story-nav { position: fixed; left: 50%; bottom: 12px; z-index: 20; width: min(92vw, 1040px); transform: translateX(-50%); margin: 0; padding: 10px 14px; border-radius: 22px; background: #fffdfbf5; box-shadow: 0 -6px 22px #6d5aa533; }
+    #shortStoryContent > .short-story-level-button { position: fixed; left: 50%; bottom: 108px; z-index: 20; transform: translateX(-50%); margin: 0; padding: 12px 22px; border: 2px solid #ccefe7; border-radius: 18px; background: #e4faf4; color: #28786c; box-shadow: 0 6px 16px #6d5aa52b; outline: none; appearance: none; white-space: nowrap; }
+    #storyContent > .story-level-button:focus, #shortStoryContent > .short-story-level-button:focus { background: #e4faf4; color: #28786c; outline: none; }
+    @keyframes animal-bounce { 50% { transform: translateY(-6px) rotate(-3deg); } }
+    .level-options { display: grid; gap: 16px; margin: 18px 0 }
+    .level-card { border-radius: 26px; padding: 24px 16px; background: #fffdfb; box-shadow: 0 8px 18px #6d5aa522; font-size: 1.35rem; border: 3px solid #eee7fa; transition: .2s; }
+    .level-card:nth-child(1) { background: linear-gradient(135deg, #eafff8, #f4fffc); border-color: #9cdecf; color: #28786c; }
+    .level-card:nth-child(2) { background: linear-gradient(135deg, #fff7d9, #fffbed); border-color: #f4d36c; color: #866313; }
+    .level-card:nth-child(3) { background: linear-gradient(135deg, #ffeaf2, #fff4f8); border-color: #efa5bd; color: #a64a6c; }
     .level-card:hover, .level-card:focus { transform: translateY(-3px); outline: none }
 
 .prompt {

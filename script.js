@@ -83,6 +83,28 @@ const storyLevels = {
 
 };
 let activeStories = stories, storyLevel = null, quizLevel = null;
+let shortStoryPage = 0;
+const shortStories = [{ title: 'Kuda dan Rusa Berlumba', cover: '🐎🦌', pages: [
+    { emoji: '🌳', text: ['Pada suatu pagi, Kuda bertemu Rusa di tepi hutan.', 'Kuda suka berlari dengan pantas.', 'Rusa juga yakin dia boleh menang.'] },
+    { emoji: '🏁', text: ['Kuda dan Rusa bersetuju untuk berlumba.', 'Mereka memilih pokok besar sebagai garisan penamat.', 'Haiwan lain datang untuk melihat perlumbaan.'] },
+    { emoji: '🏃‍♂️💨', text: ['Perlumbaan pun bermula.', 'Kuda berlari laju di jalan yang rata.', 'Rusa berhenti seketika kerana jalan itu berbatu.'] },
+    { emoji: '🤝', text: ['Kuda nampak Rusa dalam kesusahan.', 'Kuda berhenti dan membantu Rusa mencari jalan yang selamat.', 'Mereka tiba di garisan penamat bersama-sama.'] },
+    { emoji: '🌟', text: ['Haiwan lain bertepuk tangan untuk Kuda dan Rusa.', 'Kuda dan Rusa belajar bahawa membantu kawan lebih penting daripada menang.', 'Pengajaran: Kita hendaklah saling membantu dan tidak sombong.'], lesson: true }
+] }];
+shortStories[0] = { title: 'Kuda dan Rusa', cover: '🐎🦌', pages: [
+    { emoji: '', text: ['Kuda suka berlari.', 'Kuda lari sangat laju.', '“Aku paling laju!” kata Kuda.', 'Rusa hanya diam.'] },
+    { emoji: '', text: ['Pada pagi itu, Rusa berkata,', '“Jom kita berlumba!”', 'Kuda ketawa.', 'Kuda yakin dia akan menang. Mereka pun mula berlumba.'] },
+    { emoji: '', text: ['Kuda lari dengan laju.', 'Rusa sudah jauh di belakang.', '“Aku boleh rehat dulu,” kata Kuda.', 'Kuda berhenti di bawah pokok. Tidak lama kemudian, Kuda tertidur.'] },
+    { emoji: '', text: ['Rusa nampak Kuda sedang tidur.', 'Rusa tidak berhenti.', 'Rusa terus berlari.', 'Sedikit demi sedikit, Rusa semakin dekat dengan garisan penamat.'] },
+    { emoji: '🏆', text: ['Kuda bangun lalu terus berlari.', 'Tetapi sudah terlambat!', 'Rusa sudah sampai dahulu.', '“Syabas, Rusa!” kata Kuda. Kuda sedar bahawa dia tidak patut sombong.'], lesson: true, lessonText: 'Jangan sombong dan jangan mudah memandang rendah orang lain.' }
+] };
+shortStories[0] = { title: 'Arnab dan Kura-kura', cover: '🐰🐢', pages: [
+    { emoji: '🐰', text: ['Arnab suka berlari.', 'Arnab lari sangat laju.', '“Aku paling laju!” kata Arnab.', 'Kura-kura hanya diam.'] },
+    { emoji: '🏁', text: ['Pada pagi itu, Kura-kura berkata,', '“Jom kita berlumba!”', 'Arnab ketawa.', 'Arnab yakin dia akan menang. Mereka pun mula berlumba.'] },
+    { emoji: '🌳😴', text: ['Arnab lari dengan laju.', 'Kura-kura sudah jauh di belakang.', '“Aku boleh rehat dulu,” kata Arnab.', 'Arnab berhenti di bawah pokok. Tidak lama kemudian, Arnab tertidur.'] },
+    { emoji: '🐢💨', text: ['Kura-kura nampak Arnab sedang tidur.', 'Kura-kura tidak berhenti.', 'Kura-kura terus berjalan.', 'Sedikit demi sedikit, Kura-kura semakin dekat dengan garisan penamat.'] },
+    { emoji: '🏆', text: ['Arnab bangun lalu terus berlari.', 'Tetapi sudah terlambat!', 'Kura-kura sudah sampai dahulu.', '“Syabas, Kura-kura!” kata Arnab. Arnab sedar bahawa dia tidak patut sombong.'], lesson: true, lessonText: 'Jangan sombong dan jangan mudah memandang rendah orang lain.' }
+] };
 const levelWords = { 1: ['ba','bi','bu','ca','da','di','ka','la','ma','na','pa','sa'], 2: ['bas','bom','cat','jam','jus','kad','pen','rak','tin','van'], 3: ['baju','bola','buku','kaki','mata','meja','nasi','roda','susu','topi'] };
 const levelEmojis = { 1: '🌱', 2: '⭐', 3: '🏆' };
 storyLevels[2] = stories;
@@ -93,6 +115,18 @@ const storyEndings = {
 storyLevels[23].slice(10).forEach(story => {
     if (story[2].length < 4) story[2].push(storyEndings[story[0]] || 'Mereka pulang dengan gembira.');
 });
+storyLevels[3] = [
+  ['Baju Biru', '👕', ['Ali pakai baju biru.', 'Baju itu ada poket.', 'Ali simpan sapu tangan dalam poket.', 'Ali nampak kemas dan ceria.']],
+  ['Bola Masuk Gol', '⚽', ['Bola Ali warna merah.', 'Ali bawa bola ke padang.', 'Ali sepak bola dengan kuat.', 'Bola masuk gol dan semua bersorak!']],
+  ['Buku Bergambar', '📚', ['Siti dapat buku baharu.', 'Buku itu ada banyak gambar.', 'Siti baca bersama ibu.', 'Siti suka membaca setiap hari.']],
+  ['Kaki Yang Luka', '🦶', ['Kaki Ali luka sedikit.', 'Ibu cuci kaki Ali.', 'Ibu letak ubat pada luka.', 'Kaki Ali sudah baik.']],
+  ['Mata Siti', '👀', ['Mata Siti sangat cantik.', 'Siti cuci mata dengan air.', 'Siti lihat bunga di taman.', 'Siti tersenyum melihat bunga itu.']],
+  ['Meja Kemas', '🪑', ['Ini meja belajar kami.', 'Buku dan pensel ada di atas meja.', 'Kami susun semua barang.', 'Meja kami kelihatan sangat kemas.']],
+  ['Nasi Ibu', '🍚', ['Ibu masak nasi untuk makan malam.', 'Nasi itu masih panas.', 'Ali makan nasi bersama keluarga.', 'Semua orang suka masakan ibu.']],
+  ['Roda Bas', '🚌', ['Bas sekolah ada empat roda.', 'Roda bas itu besar dan bulat.', 'Bas bergerak di atas jalan.', 'Ali melambai kepada kawan.']],
+  ['Susu Untuk Ali', '🥛', ['Ali minum susu setiap pagi.', 'Susu itu sedap dan berkhasiat.', 'Ibu tuang susu ke dalam cawan.', 'Ali ucap terima kasih kepada ibu.']],
+  ['Topi Merah', '🧢', ['Ini topi merah kepunyaan Ali.', 'Ali pakai topi ketika bermain.', 'Topi itu lindung kepala Ali.', 'Ali simpan topi di atas rak.']]
+];
 const storage = { get: key => { try { return localStorage.getItem(key) } catch (e) { return null } }, set: (key, value) => { try { localStorage.setItem(key, value) } catch (e) {} } };
 const savedStoryLevel = Number(storage.get('kvkStoryLevel')) || null;
 const savedStoryIndex = Number(storage.get('kvkStoryIndex')) || 0;
@@ -115,7 +149,7 @@ function go(id) {
         renderWord();
     if (id === 'stories') {
         if (storyLevel === null) renderStoryLevels();
-        else { document.getElementById('storyLevelArea').innerHTML = ''; document.getElementById('storyContent').style.display = 'block'; renderStory(); }
+        else { document.getElementById('storyLevelArea').innerHTML = ''; storyLevel === 3 ? renderShortStory() : (document.getElementById('shortStoryContent').style.display = 'none', document.getElementById('storyContent').style.display = 'block', renderStory()); }
     }
     if (id === 'quiz') {
         if (quizLevel === null) renderQuizLevels();
@@ -188,10 +222,14 @@ function sentenceWithCapitalStart(sentence) {
 function replaceCatWithKucing(text) {
     return text.replace(/\bCat\b/g, 'Kucing').replace(/\bcat\b/g, 'kucing');
 }
-function levelButtons(type) { const labels = type === 'story' ? [['⭐ Tahap 1 – 2 huruf (KV Mudah)', 1], ['⭐⭐ Tahap 2 – 3 huruf (KVK + KVKV)', 23]] : [['🌱 Tahap 1 – KV', 1], ['⭐ Tahap 2 – KVK', 2], ['🏆 Tahap 3 – KVKV', 3]]; return '<div class="level-options">' + labels.map(item => `<button class="level-card" onclick="select${type === 'story' ? 'Story' : 'Quiz'}Level(${item[1]})">${item[0]}</button>`).join('') + '</div>' }
-function renderStoryLevels() { document.getElementById('storyContent').style.display = 'none'; document.getElementById('storyLevelArea').innerHTML = '<h3>Pilih tahap cerita</h3>' + levelButtons('story') }
-function selectStoryLevel(level) { storyLevel = level; activeStories = storyLevels[level]; si = 0; storage.set('kvkStoryLevel', level); storage.set('kvkStoryIndex', si); document.getElementById('storyLevelArea').innerHTML = ''; document.getElementById('storyContent').style.display = 'block'; renderStory() }
-function chooseStoryLevel() { storyLevel = null; activeStories = stories; document.getElementById('storyContent').style.display = 'none'; renderStoryLevels() }
+function levelButtons(type) { const labels = type === 'story' ? [['🌱 Tahap 1 – KV Mudah', 1], ['⭐ Tahap 2 – KVK Sederhana', 2], ['🏆 Tahap 3 – Cerita Pendek', 3]] : [['🌱 Tahap 1 – KV', 1], ['⭐ Tahap 2 – KVK', 2], ['🏆 Tahap 3 – KVKV', 3]]; return '<div class="level-options">' + labels.map(item => `<button class="level-card" onclick="select${type === 'story' ? 'Story' : 'Quiz'}Level(${item[1]})">${item[0]}</button>`).join('') + '</div>' }
+function renderStoryLevels() { document.getElementById('storyContent').style.display = 'none'; document.getElementById('storyLevelArea').innerHTML = '<div class="storybook-animals" aria-hidden="true"><span>🦊</span><span>🐰</span><span>🦉</span><span>🐻</span></div><h3>Pilih tahap cerita</h3><p class="storybook-subtitle">Jom buka buku dan baca bersama!</p>' + levelButtons('story') }
+function selectStoryLevel(level) { storyLevel = level; activeStories = storyLevels[level]; si = 0; storage.set('kvkStoryLevel', level); storage.set('kvkStoryIndex', si); document.getElementById('storyLevelArea').innerHTML = ''; if (level === 3) renderShortStory(); else { document.getElementById('shortStoryContent').style.display = 'none'; document.getElementById('storyContent').style.display = 'block'; renderStory(); } }
+function chooseStoryLevel() { storyLevel = null; activeStories = stories; document.getElementById('storyContent').style.display = 'none'; document.getElementById('shortStoryContent').style.display = 'none'; renderStoryLevels() }
+function renderShortStory() { const box = document.getElementById('shortStoryContent'); const story = shortStories[0]; const page = story.pages[shortStoryPage]; box.style.display = 'block'; document.getElementById('storyContent').style.display = 'none'; box.innerHTML = `<div class="short-story-cover">${story.cover}</div><h2>${story.title}</h2><div class="short-story-emoji">${page.emoji}</div><div class="short-story-text">${page.text.map(t => { const sentence = sentenceWithCapitalStart(t); return `<div class="story-line"><span>${colourSyllables(sentence)}</span><button class="mini" onclick="voice('${sentence.replaceAll("'", '')}')">🔊</button></div>` }).join('')}</div>${page.lesson ? `<div class="lesson-box">🌟 <b>Pengajaran</b><br>${page.lessonText}</div>` : ''}<div class="short-story-nav"><button class="secondary" onclick="changeShortStoryPage(-1)" ${shortStoryPage === 0 ? 'disabled' : ''}>⬅</button><span class="pill"> ${shortStoryPage + 1}/5</span><button class="primary" onclick="changeShortStoryPage(1)" ${shortStoryPage === 4 ? 'disabled' : ''}>➡</button></div><button class="secondary short-story-level-button" onclick="chooseStoryLevel()">Tukar Tahap</button>` }
+function changeShortStoryPage(n) { shortStoryPage = (shortStoryPage + n + 5) % 5; renderShortStory() }
+const renderShortStoryWithEnabledNavigation = renderShortStory;
+renderShortStory = function () { renderShortStoryWithEnabledNavigation(); document.querySelectorAll('#shortStoryContent .short-story-nav button').forEach(button => button.disabled = false); }
 function renderQuizLevels() { document.getElementById('quizContent').style.display = 'none'; document.getElementById('quizLevelArea').innerHTML = '<h3>Pilih tahap kuiz</h3>' + levelButtons('quiz') }
 function selectQuizLevel(level) { quizLevel = level; storage.set('kvkQuizLevel', level); document.getElementById('quizLevelArea').innerHTML = ''; document.getElementById('quizContent').style.display = 'block'; newQuiz() }
 function chooseQuizLevel() { quizLevel = null; document.getElementById('quizContent').style.display = 'none'; renderQuizLevels() }
